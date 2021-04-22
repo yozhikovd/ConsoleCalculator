@@ -26,21 +26,6 @@ public class RomanNumbers {
 
         try {
 
-            if (numb_1_RomanToArabic <  numb_2_RomanToArabic) {
-
-                throw new Exception("Несоответствие ТЗ. (Отрицательное число) Программа будет завершена (обработано через throw new)");
-
-            }
-
-        } catch (Exception ex_6) {
-
-            System.out.println(ex_6.getMessage());
-            System.exit(1);
-        }
-
-
-        try {
-
             if (numb_1_RomanToArabic < 1 || numb_1_RomanToArabic > 10 || numb_2_RomanToArabic > 10 || numb_2_RomanToArabic < 1 ) {
 
                 throw new Exception("Несоответствие ТЗ. Программа будет завершена (обработано через throw new)");
@@ -55,12 +40,28 @@ public class RomanNumbers {
 
 
         // логика простейших операции, подготовка к преобразованиям в римские
+        try {
 
         switch (GlobalVariables.operator) {
             case "+" -> SumRomanTrans = numb_1_RomanToArabic + numb_2_RomanToArabic;
-            case "-" -> SumRomanTrans = numb_1_RomanToArabic - numb_2_RomanToArabic;
+            case "-" -> {
+
+                if (numb_1_RomanToArabic < numb_2_RomanToArabic){
+                    throw new Exception("Несоответствие ТЗ. (Отрицательное число) Программа будет завершена (обработано через throw new)");
+                }
+                else {
+                    SumRomanTrans = numb_1_RomanToArabic - numb_2_RomanToArabic;
+                }
+
+             }
             case "*" -> SumRomanTrans = numb_1_RomanToArabic * numb_2_RomanToArabic;
             case "/" -> SumRomanTrans = numb_1_RomanToArabic / numb_2_RomanToArabic;
+        }
+
+        } catch (Exception ex_6) {
+
+            System.out.println(ex_6.getMessage());
+            System.exit(1);
         }
 
         // логика преобразования конечного результата в римские через разрядный массив риских чисел
