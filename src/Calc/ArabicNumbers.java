@@ -25,7 +25,7 @@ public class ArabicNumbers {
             System.exit(1);
         }
 
-        try {
+
 
 
             switch (GlobalVariables.operator) {
@@ -35,13 +35,9 @@ public class ArabicNumbers {
                     break;
 
                 case "-":
-                    if (numb_1_Int < numb_2_Int){
-                        throw new Exception("Несоответствие ТЗ. (Отрицательное число) Программа будет завершена (обработано через throw new)");
-                    }
-                    else {
+
                         GlobalVariables.ResultSum = numb_1_Int - numb_2_Int;
-                    }
-                    break;
+                 break;
 
                 case "*":
                     GlobalVariables.ResultSum = numb_1_Int * numb_2_Int;
@@ -52,12 +48,6 @@ public class ArabicNumbers {
                     break;
             }
 
-        }
-             catch (Exception ex_6) {
-
-                System.out.println(ex_6.getMessage());
-                System.exit(1);
-            }
 
 
         System.out.print(GlobalVariables.ResultSum);

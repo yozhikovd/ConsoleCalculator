@@ -47,7 +47,7 @@ public class RomanNumbers {
             case "-" -> {
 
                 if (numb_1_RomanToArabic < numb_2_RomanToArabic){
-                    throw new Exception("Несоответствие ТЗ. (Отрицательное число) Программа будет завершена (обработано через throw new)");
+                    throw new Exception("У римлян не существовало отрицательных чисел. Программа будет завершена (обработано через throw new)");
                 }
                 else {
                     SumRomanTrans = numb_1_RomanToArabic - numb_2_RomanToArabic;
@@ -81,7 +81,7 @@ public class RomanNumbers {
                 System.out.println(part_1_2);
             }
             case 0 -> {
-                System.out.print(0);
+                System.out.println("Пишу арабский 0, но у Римлян его существовало");
 
             }
             default -> {
